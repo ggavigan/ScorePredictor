@@ -1,0 +1,124 @@
+
+.App {
+  text-align: center;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+
+.App-header {
+  background-color: #2c3e50;
+  padding: 20px;
+  color: white;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+
+/* list of matches - flex container */
+.matches-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styling each matchup container */
+.matchup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  width: 250px;
+  background-color: #ffffff; /* White background for the card */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for each matchup card */
+.matchup:hover {
+  transform: translateY(-5px); /* Subtle raise on hover */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Team badges styling */
+.team-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.team-badge {
+  width: 60px;
+  height: 60px;
+  margin: 0 15px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #ddd; /* Add border around badges */
+}
+
+/* "VS" styling */
+.vs {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0 15px;
+  color: #34495e; /* Slightly lighter color for "VS" */
+}
+
+/* Status styling for each match */
+.status {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Colors for status types */
+.status.not-played {
+  background-color: #f39c12; /* Amber color */
+}
+
+.status.playing {
+  background-color: #27ae60; /* Green color */
+}
+
+.status.played {
+  background-color: #7f8c8d; /* Dark gray color */
+}
+
+.status.postponed {
+  background-color: #e74c3c; /* Red color */
+}
+
+/* Optional: Improve text readability and add spacing */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ecf0f1;
+  margin-bottom: 20px;
+}

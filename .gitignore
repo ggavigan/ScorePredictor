@@ -1,0 +1,22 @@
+# Ignore environment files
+.env
+.env.*
+
+# Ignore the env directory
+env/
+
+# Ignore node_modules
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore build artifacts (React)
+build/
+
+# OS and IDE-specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
