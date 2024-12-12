@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { fetchMatches } from "./helpers/fetchMatches";
-
-const leagues = [
-  { name: "Premier League", code: "PL" },
-  { name: "La Liga", code: "PD" },
-  { name: "Serie A", code: "SA" },
-  { name: "Bundesliga", code: "BL1" },
-  { name: "Ligue 1", code: "FL1" },
-];
+import { fetchLeagues } from "./helpers/fetchLeagues";
 
 function App() {
   const [matches, setMatches] = useState([]);
+  const [leagues, setLeagues] = useState([]);
   const [selectedLeague, setSelectedLeague] = useState("PL");
+
+  useEffect(() => {
+    // Fetch leagues when the app loads
+    const loadLeagues = async () => {
+      const leaguesData = await fetchLeagues();
+      setLeagues(leaguesData);
+    };
+
+    loadLeagues();
+  }, []);
 
   useEffect(() => {
     // Fetch matches whenever the selected league changes
@@ -49,9 +53,7 @@ function App() {
         <div className="matches-list">
           {matches.map((match) => (
             <div key={match.id} className="matchup">
-              <div className="match-date">
-                {match.formattedDate}
-              </div>
+              <div className="match-date">{match.formattedDate}</div>
               <div className="team-badges">
                 <img
                   src={match.homeTeam.crest}
